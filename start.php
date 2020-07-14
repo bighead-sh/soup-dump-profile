@@ -8,6 +8,14 @@ $PROFILE = '';
 // START ID
 $ID = '';
 
+
+@mkdir(dirname(__FILE__).'/dump/', 0777, true);
+
+if(empty($PROFILE ) || empty($ID )){
+    echo 'add profile name and start scroll id ( how to.png ) before start.php'.PHP_EOL;
+    exit();
+}
+
 while(true){
     echo "load ".$ID;
     $page = getpage('https://'.$PROFILE.'.soup.io/since/'.$ID.'?mode=own');
